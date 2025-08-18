@@ -1,13 +1,12 @@
-﻿using TickerQ.Dashboard.DependencyInjection;
-using TickerQ.Jobs.Application;
+﻿using TickerQ.Jobs.Application;
 using TickerQ.Jobs.Data;
 using TickerQ.Jobs.Web;
 
-namespace TickerQ.Jobs.Dashboard;
+namespace TickerQ.Jobs.Node;
 
 public sealed class Startup
 {
-    private const HostType HostType = Web.HostType.Dashboard;
+    private const HostType HostType = Web.HostType.Node;
 
     private readonly IConfiguration configuration;
 
@@ -22,15 +21,14 @@ public sealed class Startup
         services.AddApplication();
         services.AddWeb<TickerDataContext>(HostType, configureTicker =>
         {
-            configureTicker.AddDashboard();
-            configureTicker.AddDashboardBasicAuth();
+            var instanceIdentifier = Guid.NewGuid().ToString();
+            Console.WriteLine(instanceIdentifier);
+            configureTicker.SetInstanceIdentifier(instanceIdentifier);
         });
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-        app.UseStatusCodePages();
-
         app.UseWeb(HostType);
     }
 }

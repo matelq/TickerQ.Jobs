@@ -9,4 +9,7 @@
     <ProjectReference Include="..\Data\Data.csproj" />
     <ProjectReference Include="..\Web\Web.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="TickerQ.Dashboard" />
+  </ItemGroup>
 </Project>

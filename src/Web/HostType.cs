@@ -1,8 +1,7 @@
 ﻿namespace TickerQ.Jobs.Web;
 
-public enum TickerQHostType
+public enum HostType
 {
     Node,
-
     Dashboard,
 }

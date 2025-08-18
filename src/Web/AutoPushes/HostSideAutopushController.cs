@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using TickerQ.Dashboard.Controllers;
-using TickerQ.Jobs.Application.Notifications;
+﻿using TickerQ.Jobs.Application.Notifications;
 using TickerQ.Jobs.Contracts.AutoPushes;
 using TickerQ.Utilities.Base;
 using TickerQ.Utilities.Models;
@@ -8,8 +6,7 @@ using TickerQ.Utilities.Models;
 
 namespace TickerQ.Jobs.Web.AutoPushes;
 
-[Route("no-route/[controller]/[action]")]
-public sealed class HostSideAutopushController : TickerQController
+public sealed class HostSideAutopushController
 {
     private readonly IEmailNotificationService emailNotificationService;
 

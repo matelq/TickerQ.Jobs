@@ -13,7 +13,6 @@
 
     <ItemGroup>
       <PackageReference Include="TickerQ" />
-      <PackageReference Include="TickerQ.Dashboard" />
       <PackageReference Include="TickerQ.EntityFrameworkCore" />
     </ItemGroup>
 
