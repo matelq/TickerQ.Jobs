@@ -22,7 +22,7 @@ internal static class TickerQRegistry
             opt.AddOperationalStore<TTickerDataContext>(efOpt =>
             {
                 efOpt.UseModelCustomizerForMigrations(); // Applies custom model customization only during EF Core migrations
-                efOpt.CancelMissedTickersOnApplicationRestart(); // Useful in distributed mode
+                // efOpt.CancelMissedTickersOnApplicationRestart(); // Useful in distributed mode
             }); // Enables EF-backed storage
 
             configure?.Invoke(opt);
