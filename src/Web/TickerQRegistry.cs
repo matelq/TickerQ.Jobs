@@ -18,11 +18,14 @@ internal static class TickerQRegistry
     {
         services.AddTickerQ(opt =>
         {
+            opt.UpdateMissedJobCheckDelay(TimeSpan.FromSeconds(5));
+
             // Define the DbContext to use for storing Tickers.
             opt.AddOperationalStore<TTickerDataContext>(efOpt =>
             {
                 efOpt.UseModelCustomizerForMigrations(); // Applies custom model customization only during EF Core migrations
-                // efOpt.CancelMissedTickersOnApplicationRestart(); // Useful in distributed mode
+                efOpt.IgnoreSeedMemoryCronTickers();
+                efOpt.CancelMissedTickersOnAppStart(); // Useful in distributed mode
             }); // Enables EF-backed storage
 
             configure?.Invoke(opt);

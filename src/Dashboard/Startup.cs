@@ -23,7 +23,8 @@ public sealed class Startup
         services.AddWeb<TickerDataContext>(HostType, configureTicker =>
         {
             configureTicker.AddDashboard();
-            configureTicker.AddDashboardBasicAuth();
+            // With 2.5.0 Ticker version Basic Auth is no longer available
+            // configureTicker.AddDashboardBasicAuth();
         });
     }
 
