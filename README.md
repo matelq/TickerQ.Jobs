@@ -4,3 +4,5 @@
 ```
 docker compose up
 ```
+
+Dashboard access at http://localhost:8080/tickerq-dashboard
