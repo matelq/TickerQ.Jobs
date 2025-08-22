@@ -43,6 +43,8 @@ services:
     depends_on:
       postgres-db:
         condition: service_healthy
+      dashboard:
+        condition: service_started
     networks:
       - app-net
     environment:
