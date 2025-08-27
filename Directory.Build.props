@@ -31,16 +31,9 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <NoWarn>UrlHardcodeAnalyzer;AsyncFixer01;CS0612;CS0618;</NoWarn>
-    <!-- UrlHardcodeAnalyzer: String contains hardcoded URL -->
-    <!-- AsyncFixer01: Unnecessary async/await usage -->
-    <!-- CS0612: 'member' is obsolete -->
-    <!-- CS0618: 'member' is obsolete: 'text' -->
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Condition="'$(IncludeJetBrainsAnnotations)' == 'true'">
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
